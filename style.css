@@ -4,43 +4,48 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    text-decoration: none;
 }
-
+:root{
+    --first-color-bg:#5d80ff;
+    --sacond-color-bg:#0f1c33;
+    --end-color-bg:#b8d2ff;
+    --light-color-bg:#b7e2ff;
+}
 body {
     background: #f4f6ff;
     color: #fff;
 }
 
-a{
-    color: white;
-    font-size: 30px;
-}
+
 h2 {
     text-align: center;
     color: #fff;
     font-size: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     margin-top: 40px;
     letter-spacing: 2px;
 }
-.cv {
+.button {
     background: #43c8ff;
+    color: #fff;
+    font-weight: 600;
     width: fit-content;
     padding: 10px 25px;
     margin: 20px auto 0;
     border-radius: 7px;
     cursor: pointer;
     transition: .5s;
+    border: none;
+
 }
 
-.cv p {
-    color: #fff;
-    font-weight: 600;
-}
-.cv:hover{
-    background-color: transparent;
+.button:hover{
     border: 1px solid #43c8ff;
     transform: scale(1.05 );
+}
+a{
+    color: #000;
 }
 /* HEADER */
 header {
@@ -72,25 +77,25 @@ nav ul {
     list-style: none;
 }
 
-nav a {
+nav .nav-link{
     text-decoration: none;
     color: #fff;
     font-size: 15px;
     font-weight: 600;
+    transition: .5s;
 }
 
 nav a:hover{
-    color: #1b263b;
+    color: var(--first-color-bg);
 }
 
 /* ABOUT SECTION */
 
 main {
-    padding-top: 140px;
+    padding-top: 80px;
     text-align: center;
-    background: linear-gradient(to bottom, #5d80ff, #0f1c33);
+    background: linear-gradient(to bottom,var(--first-color-bg), var(--sacond-color-bg));
     padding-bottom: 80px;
-    border-bottom: 4px solid rgba(255,255,255,0.2);
 }
 
 .profile-img img {
@@ -101,6 +106,54 @@ main {
     border: 6px solid #fff;
 }
 
+.img{
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    
+    
+}
+
+.hello{
+    width: 150px;
+    padding: 18px;
+    border-radius: 20px;
+    background-color: #fff;
+    color: var(--sacond-color-bg);
+    margin: 0 auto;
+    position: relative;
+    right: 200px;
+    visibility: hidden;
+    opacity: 0;
+    animation: fade .5s ease-in-out;
+    transition: .5s;
+}
+.hello::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 25px;
+    background-color: #fff;
+    bottom: -15px;
+    left: 50%;
+    border-radius: 0 0 10px 100px;
+    
+}
+.img:hover .hello {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+@keyframes fade{
+    0%{
+        transform: translateY(-20px) ; 
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px) ;
+        opacity: 1;
+    }
+}
 .name {
     font-size: 26px;
     font-weight: 700;
@@ -128,7 +181,7 @@ main {
 .link-card {
     width: 90px;
     height: 90px;
-    background-color: rgba(255, 255, 255, 0.12);
+    background-color: var(--light-color-bg);
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -139,7 +192,10 @@ main {
     animation: spinFloat 10s infinite ;
     transform-style: preserve-3d;
 }
-
+.link-card a{
+    color: white;
+    font-size: 30px;
+}
 .link-card:hover {
     animation-play-state: paused;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
@@ -179,7 +235,7 @@ main {
 
 .about-content {
     max-width: 600px;
-    background: linear-gradient(to bottom, #2f3f66, #1b263b);
+    background: linear-gradient(to bottom, #455e9b, #1b263b);
     padding: 25px;
     border-radius: 20px;
     margin: 40px auto 0;
@@ -197,6 +253,7 @@ main {
 #projects {
     background: #0f1c33;
     padding: 70px 20px;
+
 }
 
 .project-list {
@@ -209,22 +266,50 @@ main {
 .project-item {
     background: #fff;
     width: 330px;
+    height: 230px;
     border-radius: 15px;
     padding-bottom: 20px;
     color: #000;
     text-align: center;
     overflow: hidden;
 }
-
+.project-item:hover{
+    box-shadow: 0 0px 10px 5px rgba(248, 248, 255, 0.321);
+}
 .project-item img {
     width: 100%;
     border-radius: 15px 15px 0 0;
 }
+.img-overlay{
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+}
+.img-overlay img{
+     width: 100%;
+    transition: transform 0.4s;
+}
+.img-overlay .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.455); 
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+.project-item:hover .overlay {
+    opacity: 0; 
+}
 
+.project-item:hover img {
+    transform: scale(1.05); 
+}
 /* SKILLS */
 
 .skills {
-    background: linear-gradient(to bottom, #5d80ff, #b8d2ff);
+    background: linear-gradient(to bottom,var(--sacond-color-bg), var(--first-color-bg), var(--end-color-bg));
     padding: 70px 20px;
     display: flex;
     flex-direction: column;
@@ -244,8 +329,21 @@ main {
     border-radius: 15px;
     text-align: center;
     color: #0c1b3a;
+    transition: .5s;
 }
 
+.skill-card:hover{
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 0px 10px 5px rgba(248, 248, 255, 0.321);
+}
+.skill-card:first-child:hover{
+    transform: rotate(-5deg) scale(1.05);
+    box-shadow: 0 0px 10px 5px rgba(248, 248, 255, 0.321);
+}
+.skill-card:last-child:hover{
+    transform: rotate(5deg) scale(1.05);
+    box-shadow: 0 0px 10px 5px rgba(248, 248, 255, 0.321);
+}
 .skill-card img {
     width: 60px;
     margin-bottom: 15px;
@@ -253,9 +351,9 @@ main {
 
 /* CONTACT */
 .contact {
-    background: #b4c9ff;
+    background: var(--end-color-bg);
     padding: 70px 20px;
-    color: #0c1b3a;
+    color: var(--sacond-color-bg);
     border-radius: 30px;
     margin: 40px auto;
     width: 90%;
@@ -302,13 +400,7 @@ main {
     outline: none;
 }
 
-.contact button {
-    padding: 12px;
-    background: #5a7aff;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-}
+
 
 /* FOOTER */
 footer {
@@ -334,7 +426,7 @@ footer a {
         flex-direction: column;
         text-align: center;
         gap: 10px;
-        padding: 15px;
+        /* padding: 15px; */
     }
 
     nav ul {
@@ -344,6 +436,7 @@ footer a {
     .sm-links {
         width: 200px;
         height: 200px;
+        margin: 30px auto;
     }
     .link-card {
         width: 55px;
@@ -353,4 +446,25 @@ footer a {
         0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
         100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
     }
+
+    .contact-content{
+        flex-direction: column;
+        text-align: center;
+        padding-left: 0px;
+    }
+    .contact-content::after{
+    width: 0px;
+}
+}
+
+@media (max-width: 450px){
+    header{
+        width: 90%;
+    }
+    nav ul {
+        display: none;
+    }
+   .about-content p span{
+    display: none;
+   }
 }

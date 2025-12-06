@@ -16,17 +16,22 @@
         <h1>Protefolo</h1>
         <nav>
             <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a class="nav-link" href="#about">About Me</a></li>
+                <li><a class="nav-link" href="#projects">Projects</a></li>
+                <li><a class="nav-link" href="#skills">Skills</a></li>
+                <li><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main id="about">
         <div class="profile-img">
-            <img src="./imges/profile.png" alt="profile picture">
+            
+            <div class="img">
+                <div class="hello">hi! nice to meet you</div>
+                <img class="img" src="./imges/profile.png" alt="profile picture">
+            </div>
+            
             <p class="name">AYA TULLA KHALED</p>
         </div>
         <div class="sm-links">
@@ -37,36 +42,46 @@
         <div class="about-content">
             <p>
                 Hi! I’m Aya tulla Khaled, a fourth-year student at the Faculty of Specific Education and an aspiring
-                Front-End Developer and Graphic Designer. I enjoy creating simple, clean, and user-friendly websites,
+                Front-End Developer and Graphic Designer. <span>I enjoy creating simple, clean, and user-friendly websites,
                 and I also have experience in video editing and motion graphics using Adobe After Effects and Premiere
-                Pro.
+                Pro.</span><br>
 
                 I love bringing ideas to life — whether through beautiful designs, smooth animations, or well-written
                 code.
             </p>
-            <div class="cv">
+            <a  href="./imges/Ayatulla_Khaled_Resume.pdf" download="">
+            <div class="button">
                 <p>DOWNLOAD CV</p>
-            </div>
+            </div></a>
         </div>
     </main>
-    <hr>
     <section id="projects">
         <h2>Projects</h2>
         <div class="project-list">
+            
             <div class="project-item">
-                <img src="./imges/charles.png" alt="Project 1">
-                <h3>Project Title 1</h3>
-                <p>Brief description of Project 1.</p>
+                <a href="https://aya-tu.github.io/Charles-website/">
+                <div class="img-overlay">
+                 <img src="./imges/charles.png" alt="Project1">  
+                 <div class="overlay"></div> 
+                 <h3>Charels</h3></a>
+            </div>
             </div>
             <div class="project-item">
-                <img src="./imges/inhanc.png" alt="Project 2">
-                <h3>Project Title 2</h3>
-                <p>Brief description of Project 2.</p>
+                <a href="https://aya-tu.github.io/Inance-website/">
+                <div class="img-overlay">
+                 <img src="./imges/inhanc.png" alt="Project 2">  
+                 <div class="overlay"></div> 
+                 <h3>Inhance</h3></a>
+            </div> 
             </div>
+            <a href="https://aya-tu.github.io/gallery/">
             <div class="project-item">
-                <img src="./imges/galley.png" alt="Project 3">
-                <h3>Project Title 3</h3>
-                <p>Brief description of Project 3.</p>
+                <div class="img-overlay">
+                   <img src="./imges/galley.png" alt="Project 3"> 
+                   <div class="overlay"></div>
+                <h3>Galley</h3></a>
+                </div> 
             </div>
         </div>
     </section>
@@ -91,8 +106,9 @@
             </div>
 
         </div>
-        <div class="cv">
-            <p>DOWNLOAD CV</p>
+        <a  href="./imges/Ayatulla_Khaled_Resume.pdf" download="">
+        <div class="button">
+            <p>DOWNLOAD CV</p></div></a>
         </div>
     </section>
     <section class="contact">
@@ -113,7 +129,7 @@
                 <input type="text" placeholder="Your Name" required>
                 <input type="email" placeholder="Your Email" required>
                 <textarea rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
+                <button type="submit" class="button">Send Message</button>
         </div>
 
     </section>
