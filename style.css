@@ -267,7 +267,7 @@ main {
 .project-item {
     background: #fff;
     width: 330px;
-    height: 230px;
+    height: 250px;
     border-radius: 15px;
     padding-bottom: 20px;
     color: #000;
@@ -282,6 +282,7 @@ main {
     border-radius: 15px 15px 0 0;
 }
 .img-overlay{
+    height: 250px;
     position: relative;
     overflow: hidden;
     border-radius: 15px 15px 0 0;
